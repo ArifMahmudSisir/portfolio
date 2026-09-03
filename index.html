@@ -15,6 +15,7 @@
 </head>
 
 <body>
+    <canvas id="bg-canvas"></canvas>
 
     <header class="header">
         <nav class="navbar">
@@ -39,9 +40,11 @@
         <section id="hero" class="hero">
             <div class="container hero-container">
                 <div class="hero-content">
-                    <p class="greeting">Hello, I'm</p>
+                    <div class="status-badge"><span class="pulse-dot"></span> Available for new opportunities</div>
+                    <p class="greeting"><span class="tech-prompt">~ $</span> Hello, I'm</p>
                     <h1 class="name">Arif Mahmud Sisir</h1>
-                    <h2 class="title">AI Engineer & <span class="highlight">Automation Specialist</span></h2>
+                    <h2 class="title">AI Engineer & <span class="highlight">Automation Architect</span></h2>
+                    <p class="hero-description">Designing scalable machine learning models and intelligent automation workflows that drive business transformation.</p>
                     <div class="contact-mini">
                         <a href="mailto:sisir711954@gmail.com"><i class="fas fa-envelope"></i> sisir711954@gmail.com</a>
                         <span><i class="fas fa-map-marker-alt"></i> Gazipur, Dhaka</span>
@@ -74,12 +77,10 @@
         <section id="about" class="section">
             <div class="container">
                 <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">Innovating with Intelligence</p>
-                <div class="about-content">
-                    <p>
-                        Innovative AI Engineer with expertise in machine learning, deep learning, and automation.
-                        Passionate about building intelligent systems that solve real-world problems efficiently and
-                        ethically.
+                <p class="section-subtitle">Architecting the Future of Work</p>
+                <div class="about-content glass-panel">
+                    <p class="lead-text">
+                        Specializing in <strong>RAG pipelines</strong>, <strong>LLM fine-tuning</strong>, and <strong>n8n automation</strong>, I bring 3+ years of expertise in architecting production-grade AI systems. My focus is on bridging the gap between cutting-edge AI research and practical, high-ROI business solutions.
                     </p>
                 </div>
             </div>
@@ -92,25 +93,23 @@
                 <div class="skills-grid">
 
                     <div class="skill-category">
-                        <h3><i class="fas fa-brain"></i> Generative AI & LLMs</h3>
+                        <h3><i class="fas fa-brain"></i> Generative AI</h3>
                         <div class="tags">
+                            <span>LLMs</span>
                             <span>GPT</span>
                             <span>LLaMA</span>
-                            <span>Mistral</span>
-                            <span>Falcon</span>
-                            <span>FLAN-T5</span>
-                            <span>RAG Knowledge Systems</span>
+                            <span>Hugging Face</span>
                         </div>
                     </div>
 
                     <div class="skill-category">
                         <h3><i class="fas fa-robot"></i> Machine Learning</h3>
                         <div class="tags">
-                            <span>Scikit-learn</span>
-                            <span>Supervised Learning</span>
-                            <span>Unsupervised Learning</span>
-                            <span>Feature Engineering</span>
-                            <span>Data Analysis</span>
+                            <span>Model training</span>
+                            <span>Fine tuning and evaluation</span>
+                            <span>Supervised & unsupervised learning</span>
+                            <span>Data preprocessing</span>
+                            <span>Feature engineering</span>
                         </div>
                     </div>
 
@@ -120,44 +119,49 @@
                             <span>CNNs</span>
                             <span>RNNs</span>
                             <span>Transformers</span>
-                            <span>Computer Vision</span>
                         </div>
                     </div>
 
                     <div class="skill-category">
-                        <h3><i class="fas fa-code"></i> Programming & Web</h3>
-                        <div class="tags">
-                            <span>Python</span>
-                            <span>JavaScript</span>
-                            <span>C/C++</span>
-                            <span>PHP</span>
-                            <span>Node.js</span>
-                            <span>React</span>
-                            <span>HTML/CSS</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3><i class="fas fa-cogs"></i> Automation & Cloud</h3>
-                        <div class="tags">
-                            <span>n8n</span>
-                            <span>Make.com</span>
-                            <span>AWS</span>
-                            <span>Cpanel</span>
-                            <span>VPS</span>
-                            <span>Data Pipelines</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3><i class="fas fa-tools"></i> Tools & Libraries</h3>
+                        <h3><i class="fas fa-chart-bar"></i> Data Analysis & Preprocessing</h3>
                         <div class="tags">
                             <span>Pandas</span>
                             <span>NumPy</span>
                             <span>Matplotlib</span>
-                            <span>spaCy</span>
-                            <span>NLTK</span>
                             <span>Power BI</span>
+                            <span>Computer vision (OpenCV/YOLO)</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3><i class="fas fa-cloud"></i> Cloud Platforms</h3>
+                        <div class="tags">
+                            <span>MLOps</span>
+                            <span>Cpanel</span>
+                            <span>VPS</span>
+                            <span>Docker</span>
+                            <span>AWS</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3><i class="fas fa-laptop-code"></i> FULL Stack WebApplication</h3>
+                        <div class="tags">
+                            <span>Python Django</span>
+                            <span>React</span>
+                            <span>Database</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3><i class="fas fa-cogs"></i> AI and Automation</h3>
+                        <div class="tags">
+                            <span>RAG Knowledge Systems</span>
+                            <span>n8n & Make.com Automation</span>
+                            <span>Voice AI & Chatbots</span>
+                            <span>Lead Gen Automation</span>
+                            <span>Data Pipeline Architecture</span>
+                            <span>Vector DBs</span>
                         </div>
                     </div>
 
@@ -172,41 +176,53 @@
                 <div class="timeline">
 
                     <div class="timeline-item">
-                        <div class="timeline-date">Nov 2024 - Present</div>
+                        <div class="timeline-date">12/2025 - Present</div>
+                        <div class="timeline-content">
+                            <h3>AI Developer</h3>
+                            <h4>Sparktech Agency LTD</h4>
+                            <ul>
+                                <li>I have built and managed AI-focused projects from planning to deployment, creating scalable automation solutions that improved efficiency and reduced manual work.</li>
+                                <li>Collaborated with teams to develop workflow automations using n8n and other tools.</li>
+                                <li>Built and fine-tuned custom AI models for business-specific solutions.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">11/2024 - 11/2025</div>
                         <div class="timeline-content">
                             <h3>Jr. Project Manager & AI Engineer</h3>
                             <h4>Apcorn Innovation</h4>
                             <ul>
-                                <li>Led and managed AI-focused projects from planning to deployment.</li>
-                                <li>Designed and implemented AI models to solve real-world business challenges.</li>
-                                <li>Coordinated project activities, team communication, and progress tracking.</li>
+                                <li>Led and managed AI-focused projects from planning to deployment, ensuring timely delivery and high-quality outcomes.</li>
+                                <li>Coordinated project activities, team collaboration, and progress tracking to maintain efficient workflows.</li>
+                                <li>Designed and implemented AI models to solve real-world business challenges and improve operational performance.</li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-date">Feb 2024 - Oct 2024</div>
+                        <div class="timeline-date">02/2024 - 10/2024</div>
                         <div class="timeline-content">
                             <h3>Software Engineer</h3>
                             <h4>Velocita Infosys LTD</h4>
                             <ul>
-                                <li>Contributed to the design and deployment of web-based and AI-integrated software.
-                                </li>
-                                <li>Developed backend and frontend (MERN stack).</li>
-                                <li>Integrated AI and automation features to enhance system efficiency.</li>
+                                <li>Contributed to the design, development, and deployment of web-based and AI-integrated software solutions, collaborating with cross-functional teams.</li>
+                                <li>Delivered scalable and high-performance systems.</li>
+                                <li>Integrated AI and automation features to improve operational efficiency, system functionality, and overall user experience.</li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-date">2021 - 2024</div>
+                        <div class="timeline-date">2023 - 2025</div>
                         <div class="timeline-content">
                             <h3>Research Assistant</h3>
-                            <h4>Under MD. Mizanur Rahman Sir</h4>
+                            <h4>MD. Mizanur Rahman (Assistant Professor, Southeast University)</h4>
                             <ul>
-                                <li>Assisted in developing ML models for data analysis and prediction.</li>
-                                <li>Conducted experiments, cleaned datasets, and documented findings.</li>
-                                <li>Contributed to technical reports and presentations.</li>
+                                <li>Assist in conducting research activities by collecting, organizing, and analyzing data.</li>
+                                <li>Support literature reviews, prepare reports and presentations, maintain accurate research records, and help coordinate project-related tasks.</li>
+                                <li>Collaborate with team members to ensure research objectives are met while maintaining high standards of accuracy, confidentiality, and professionalism.</li>
                             </ul>
                         </div>
                     </div>
@@ -224,8 +240,7 @@
                     <article class="project-card">
                         <div class="project-content">
                             <h3>Smart Outfit Try-On System</h3>
-                            <p class="project-desc">AI-powered virtual try-on system leveraging Gemini API for advanced
-                                AI and computer vision. Maps clothing items onto user images in real-time.</p>
+                            <p class="project-desc">Developed an AI-powered virtual try-on system that allows users to see how different outfits look on them in real-time. Leveraging Gemini API for advanced AI and computer vision capabilities, the system accurately maps clothing items onto user images or live video, providing realistic visualization of fit, style, and color.</p>
                             <ul class="project-tags">
                                 <li>Gemini API</li>
                                 <li>Computer Vision</li>
@@ -236,22 +251,8 @@
 
                     <article class="project-card">
                         <div class="project-content">
-                            <h3>AI-Enhanced Sales Campaign CRM</h3>
-                            <p class="project-desc">MVP CRM system enhanced with LLaMA for automating sales campaigns,
-                                analyzing customer interactions, and generating insights.</p>
-                            <ul class="project-tags">
-                                <li>LLaMA</li>
-                                <li>NLP</li>
-                                <li>Lead Scoring</li>
-                            </ul>
-                        </div>
-                    </article>
-
-                    <article class="project-card">
-                        <div class="project-content">
                             <h3>Kidney Diseases Identification</h3>
-                            <p class="project-desc">Detection system using ResNet50 for feature extraction and GANs for
-                                data augmentation to classify kidney diseases from CT/Ultrasound.</p>
+                            <p class="project-desc">Developed an AI system to detect and classify kidney diseases from medical imaging data using ResNet50 for feature extraction and GANs for data augmentation. The model enhances dataset diversity, improving classification accuracy even with limited medical images.</p>
                             <ul class="project-tags">
                                 <li>GANs</li>
                                 <li>ResNet50</li>
@@ -263,8 +264,7 @@
                     <article class="project-card">
                         <div class="project-content">
                             <h3>Breast Cancer ID (Thermal)</h3>
-                            <p class="project-desc">Classifying breast cancer from thermal imaging data using an
-                                extended VGG16 deep learning model architecture.</p>
+                            <p class="project-desc">Developed an AI system to detect and classify breast cancer from thermal imaging data using an extended VGG16 deep learning model architecture. The extended architecture improves feature extraction from thermal images, enabling accurate identification of malignant and benign cases.</p>
                             <ul class="project-tags">
                                 <li>VGG16</li>
                                 <li>Deep Learning</li>
@@ -275,13 +275,48 @@
 
                     <article class="project-card">
                         <div class="project-content">
-                            <h3>Roli Cleaner (Time Tracker)</h3>
-                            <p class="project-desc">Geolocation-based time tracking web app. Verifies user location for
-                                clock-in/out.</p>
+                            <h3>Vorra – AI-Powered Wound Monitoring</h3>
+                            <p class="project-desc">Developed an AI-driven wound monitoring platform that enables patients and caregivers to track wound healing through smartphone photos. The system analyzes wound progression, provides plain-language healing insights, and generates clinician-ready PDF reports.</p>
                             <ul class="project-tags">
-                                <li>MERN Stack</li>
-                                <li>Geolocation</li>
-                                <li>Real-time</li>
+                                <li>AI Healthcare</li>
+                                <li>Computer Vision</li>
+                                <li>Reporting</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-content">
+                            <h3>Do What Works – AI Personal Dev</h3>
+                            <p class="project-desc">Developed an AI-driven self-improvement platform that transforms personal beliefs into structured 10-day experiments. Built features including AI-guided strategy sessions, belief assessment, progress tracking, and daily metric logging.</p>
+                            <ul class="project-tags">
+                                <li>LLMs</li>
+                                <li>AI Coach</li>
+                                <li>Web App</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-content">
+                            <h3>EKKO Loop – Customer Retention</h3>
+                            <p class="project-desc">Developed an AI-driven customer retention platform featuring an AI receptionist, automated appointment booking, WhatsApp follow-ups, customer re-engagement workflows, analytics, and CRM integrations.</p>
+                            <ul class="project-tags">
+                                <li>AI Voice</li>
+                                <li>Automation</li>
+                                <li>CRM Integration</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-content">
+                            <h3>Vidora – AI Content Creation Studio</h3>
+                            <p class="project-desc">Developed an all-in-one AI content generation platform that transforms text prompts into videos, images, voiceovers, and talking avatars. Implemented content generation workflows and media editing tools.</p>
+                            <ul class="project-tags">
+                                <li>Generative AI</li>
+                                <li>Video Gen</li>
+                                <li>SaaS</li>
                             </ul>
                         </div>
                     </article>
@@ -333,8 +368,8 @@
                     <div>
                         <h2 class="section-title">Publications</h2>
                         <div class="citation-box">
-                            <p><strong>Breast Cancer Detection with Vgg16:</strong> A Deep Learning Approach with
-                                Thermographic Imaging</p>
+                            <p><strong>2024 Breast Cancer Detection with Vgg16:</strong> A Deep Learning Approach with Thermographic Imaging,<br>
+                            <i>International Journal of Intelligent Systems and Applications in Engineering (IJISAE)</i></p>
                         </div>
                     </div>
                     <div>
@@ -360,7 +395,7 @@
                 <h2 class="section-title">Get In Touch</h2>
                 <div class="contact-card">
                     <p>Interested in collaborating on AI projects or discussing automation solutions?</p>
-                    <a href="mailto:sisir711954@gmail.com" class="btn btn-primary large">Contact Me</a>
+                    <a href="#" id="open-contact-modal" class="btn btn-primary large">Contact Me</a>
                     <div class="contact-details">
                         <p><i class="fas fa-envelope"></i> sisir711954@gmail.com</p>
                         <p><i class="fas fa-phone"></i> +8801779052465</p>
