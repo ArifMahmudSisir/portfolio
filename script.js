@@ -149,4 +149,104 @@ document.addEventListener('DOMContentLoaded', () => {
             init();
         });
     }
+
+    // Orbit Skills Interactive Logic
+    const skillsDataElem = document.getElementById('skills-data-json');
+    if (skillsDataElem) {
+        try {
+            const skillsData = JSON.parse(skillsDataElem.textContent);
+            const nodes = document.querySelectorAll('.planet-node');
+            const placeholder = document.getElementById('details-placeholder');
+            const content = document.getElementById('details-content');
+            const detailTitle = document.getElementById('detail-title');
+            const detailIcon = document.getElementById('detail-icon');
+            const detailTags = document.getElementById('detail-tags');
+
+            nodes.forEach(node => {
+                node.addEventListener('click', () => {
+                    nodes.forEach(n => n.classList.remove('active'));
+                    node.classList.add('active');
+
+                    const category = node.getAttribute('data-category');
+                    const data = skillsData[category];
+
+                    if (data) {
+                        placeholder.classList.add('hidden');
+                        content.classList.remove('hidden');
+                        
+                        detailTitle.innerText = data.title;
+                        detailIcon.className = 'fas ' + data.icon;
+                        
+                        detailTags.innerHTML = '';
+                        data.tags.forEach(tagText => {
+                            const span = document.createElement('span');
+                            span.innerText = tagText;
+                            detailTags.appendChild(span);
+                        });
+                    }
+                });
+            });
+        } catch (e) {
+            console.error("Error parsing skills data", e);
+        }
+    }
+
+    // Coverflow Logic
+    const coverflowItems = document.querySelectorAll('.coverflow-item');
+    const prevBtn = document.getElementById('coverflow-prev');
+    const nextBtn = document.getElementById('coverflow-next');
+    
+    if (coverflowItems.length > 0) {
+        let currentIndex = 0;
+
+        function updateCoverflow() {
+            coverflowItems.forEach((item, index) => {
+                item.className = 'coverflow-item'; // Reset classes
+                
+                if (index === currentIndex) {
+                    item.classList.add('active');
+                } else if (index === currentIndex - 1 || (currentIndex === 0 && index === coverflowItems.length - 1)) {
+                    item.classList.add('prev-1');
+                } else if (index === currentIndex + 1 || (currentIndex === coverflowItems.length - 1 && index === 0)) {
+                    item.classList.add('next-1');
+                } else if (index === currentIndex - 2 || 
+                          (currentIndex === 1 && index === coverflowItems.length - 1) || 
+                          (currentIndex === 0 && index === coverflowItems.length - 2)) {
+                    item.classList.add('prev-2');
+                } else if (index === currentIndex + 2 || 
+                          (currentIndex === coverflowItems.length - 2 && index === 0) || 
+                          (currentIndex === coverflowItems.length - 1 && index === 1)) {
+                    item.classList.add('next-2');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex === 0) ? coverflowItems.length - 1 : currentIndex - 1;
+                updateCoverflow();
+            });
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex === coverflowItems.length - 1) ? 0 : currentIndex + 1;
+                updateCoverflow();
+            });
+        }
+        
+        coverflowItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                if (currentIndex !== index) {
+                    currentIndex = index;
+                    updateCoverflow();
+                }
+            });
+        });
+
+        // Initialize
+        updateCoverflow();
+    }
 });
